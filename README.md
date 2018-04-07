@@ -1,4 +1,4 @@
-Ethereum Network Stats
+Ethereum Social Network Stats
 ============
 [![Build Status][travis-image]][travis-url] [![dependency status][dep-image]][dep-url]
 
@@ -57,7 +57,7 @@ npm start
 sudo npm install -g pm2
 ```
 
-* Create an app.json file in the local directory of eth-netstats:
+* Create an app.json file in the local directory of etsc-netstats:
 ```json[
   {
     "name"        : "etsc-netstats",
@@ -78,7 +78,7 @@ sudo npm install -g pm2
 ]
 ```
 
-* Run eth-netstats as PM2 service and persist the service for reboot
+* Run etsc-netstats as PM2 service and persist the service for reboot
 ```bash
 pm2 start ./app.json
 pm2 save
