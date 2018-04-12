@@ -6,6 +6,20 @@ This is a visual interface for tracking ethereum social network status. It uses 
 
 ![Screenshot](https://raw.githubusercontent.com/cubedro/eth-netstats/master/src/images/screenshot.jpg?v=0.0.6 "Screenshot")
 
+## How to list my nodes on [stats.ethereumsocial.kr](https://stats.ethereumsocial.kr) ?
+
+You can use [multi-geth](https://github.com/ethereumsocial/multi-geth) or [etsc-net-intelligence-api](https://github.com/ethereumsocial/etsc-net-intelligence-api) for connecting to netstats server.
+
+Using multi-geth
+
+Add --ethstats option behind the start command
+
+example)
+
+```bash
+geth --chain=social --ethstats "<your-nickname>:NewEthereumSocial@stats.ethereumsocial.kr"
+```
+
 ## Prerequisite
 
 * node
