@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /root/eth-netstats
+cd /root/clo-netstats
 while true
 do
 if [ ! `pgrep node` ] ; then

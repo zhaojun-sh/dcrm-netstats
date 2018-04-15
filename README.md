@@ -1,12 +1,12 @@
-Ethereum Social Network Stats
+Callisto Network Stats
 ============
 [![Build Status][travis-image]][travis-url] [![dependency status][dep-image]][dep-url]
 
-This is a visual interface for tracking ethereum social network status. It uses WebSockets to receive stats from running nodes and output them through an angular interface. It is the front-end implementation for [etsc-net-intelligence-api](https://github.com/ethereumsocial/etsc-net-intelligence-api).
+This is a visual interface for tracking callisto network status. It uses WebSockets to receive stats from running nodes and output them through an angular interface. It is the front-end implementation for [multi-geth](https://github.com/ethereumsocial/multi-geth).
 
 ![Screenshot](https://raw.githubusercontent.com/cubedro/eth-netstats/master/src/images/screenshot.jpg?v=0.0.6 "Screenshot")
 
-## How to list my nodes on [stats.ethereumsocial.kr](https://stats.ethereumsocial.kr) ?
+## How to list my nodes on [clostats.net](https://clostats.net) ?
 
 You can use [multi-geth](https://github.com/ethereumsocial/multi-geth) or [etsc-net-intelligence-api](https://github.com/ethereumsocial/etsc-net-intelligence-api) for connecting to netstats server.
 
@@ -17,7 +17,7 @@ Add --ethstats option behind the start command
 example)
 
 ```bash
-geth --chain=social --ethstats "<your-nickname>:NewEthereumSocial@stats.ethereumsocial.kr"
+geth --chain=callisto --ethstats "<your-nickname>:Callisto@clostats.net"
 ```
 
 ## Prerequisite
@@ -32,8 +32,8 @@ Make sure you have node.js and npm installed.
 Clone the repository and install the dependencies
 
 ```bash
-git clone https://github.com/ethereumsocial/etsc-netstats
-cd etsc-netstats
+git clone https://github.com/chainkorea/clo-netstats
+cd clo-netstats
 npm install
 sudo npm install -g grunt-cli
 ```
@@ -74,8 +74,8 @@ sudo npm install -g pm2
 * Create an app.json file in the local directory of etsc-netstats:
 ```json[
   {
-    "name"        : "etsc-netstats",
-    "cwd"         : "<folder-path-to-etsc-netstats-e.g. /home/gethadmin/etsc-netstats/>",
+    "name"        : "clo-netstats",
+    "cwd"         : "<folder-path-to-etsc-netstats-e.g. /home/gethadmin/clo-netstats/>",
     "script"      : "app.js",
     "log_date_format"   : "YYYY-MM-DD HH:mm Z",
     "merge_logs"    : false,
@@ -100,7 +100,7 @@ pm2 save
 
 see the interface at http://localhost:3000
 
-[travis-image]: https://travis-ci.org/ethereumsocial/etsc-netstats.svg
-[travis-url]: https://travis-ci.org/ethereumsocial/etsc-netstats
-[dep-image]: https://david-dm.org/ethereumsocial/etsc-netstats.svg
-[dep-url]: https://david-dm.org/ethereumsocial/etsc-netstats
+[travis-image]: https://travis-ci.org/chainkorea/clo-netstats.svg
+[travis-url]: https://travis-ci.org/chainkorea/clo-netstats
+[dep-image]: https://david-dm.org/chainkorea/clo-netstats.svg
+[dep-url]: https://david-dm.org/chainkorea/clo-netstats
