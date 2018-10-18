@@ -46,5 +46,7 @@
     }
   ],
   "license": "LGPL-3.0",
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt-contrib-watch": "^1.1.0"
+  }
 }
