@@ -7,7 +7,7 @@ html {
 body {
 	font-family: 'Roboto', sans-serif;
 	width: 100%;
-	background: #ffffff;
+	background: #e5e5e5;
 	font-smooth: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -77,14 +77,30 @@ table td {
 	color: #ff8a00;
 }
 
-.container-fluid {
-	padding-left: 30px;
-	padding-right: 30px;
+.container-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(312px, 400px));
+  justify-content: center;
+  grid-gap: 10px 10px;
+  padding: 0 10px;
 }
 
 .stat-holder {
 	background: #ffffff;
 	border: 1px solid rgba(255,255,255,0.05);
+  width: 100%;
+  height: 100px;
+  border-radius: 4px
+}
+
+.stat-holder-small {
+  padding: 10px 15px 0px 15px;
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.05);
+  width: 100%;
+  height: 40px;
+  border-radius: 4px
 }
 
 .big-info {
@@ -474,9 +490,9 @@ svg .y.axis .tick:first-child text {
 }
 
 @media (max-width: 768px) {
-	.container-fluid {
-		padding-left: 5px;
-		padding-right: 5px;
+	.container-grid {
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 
 	.big-info .icon-full-width i {
@@ -554,7 +570,7 @@ svg .y.axis .tick:first-child text {
 }
 
 .Header {
-  background: #fff;
+  background: #e5e5e5;
   padding: 0.5em 1em;
 	margin-bottom: 2em;
   width: 100%;
@@ -674,7 +690,7 @@ svg .y.axis .tick:first-child text {
 }
 .Header-menu-mobile-content-middle .Header-menu-content-target {
   width: 100%;
-  padding: 0.5em;
+  padding: 1.8em 0.8em;
   display: block;
   font-size: 18px;
   line-height: 1.05;
