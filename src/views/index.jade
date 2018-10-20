@@ -31,14 +31,19 @@ block content
           li
             a.Header-menu-content-target(href='/blog/') Blog
   div.container-grid(ng-controller='StatsCtrl')
-      div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
-        div.big-info.bestblock.text-info
-          div.pull-left.icon-full-width
-            i.icon-block
-          div.big-details-holder
-            span.small-title best block
-            span.big-details {{'#'}}{{ bestBlock | number}}
-          div.clearfix
+      // div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
+      //   div.big-info.bestblock.text-info
+      //     div.pull-left.icon-full-width
+      //       i.icon-block
+      //     div.big-details-holder
+      //       span.small-title best block
+      //       span.big-details.text-success {{'#'}}{{ bestBlock | number}}
+      //     div.clearfix
+      div.stat-holder
+        span.small-title best block
+        div.stat-row.bestblock
+          i.icon-block
+          span.text-success {{'#'}}{{ bestBlock | number}}
       div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
         div.big-info.uncleCount.text-info
           div.pull-left.icon-full-width
@@ -86,6 +91,7 @@ block content
               span.small-hash {{ lastDifficulty | totalDifficultyFilter }}
           div.clearfix
 
+  div.container-grid(ng-controller='StatsCtrl')
       div.stat-holder-small
         div.active-nodes(class="{{ nodesActive | nodesActiveClass : nodesTotal }}")
           i.icon-node
@@ -112,70 +118,66 @@ block content
           span.small-title uptime
           span.small-value {{ upTimeTotal | upTimeFilter }}
 
-    div.row
-      div.col-xs-12.col-sm-12.col-md-12.col-lg-8
-        div.row
-          div.col-xs-6.col-sm-4.col-md-3.stat-holder
-            div.big-info.chart(class="{{ avgBlockTime | avgTimeClass }}")
-              //- i.icon-time
-              span.small-title block time
-              //- span.small-value {{ avgBlockTime | avgTimeFilter }}
-              sparkchart.big-details.spark-blocktimes(data="{{lastBlocksTime.join(',')}}", tooltipsuffix="s")
+  div.container-grid.dense-grid(ng-controller='StatsCtrl')
+      div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph
+        div.big-info.chart(class="{{ avgBlockTime | avgTimeClass }}")
+          //- i.icon-time
+          span.small-title block time
+          //- span.small-value {{ avgBlockTime | avgTimeFilter }}
+          sparkchart.big-details.spark-blocktimes(data="{{lastBlocksTime.join(',')}}", tooltipsuffix="s")
 
-          div.col-xs-6.col-sm-4.col-md-3.stat-holder
-            div.big-info.chart.text-info
-              //- i.icon-difficulty
-              span.small-title difficulty
-              //- span.small-value {{ lastDifficulty | number }}
-              sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
+      div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph
+        div.big-info.chart.text-info
+          //- i.icon-difficulty
+          span.small-title difficulty
+          //- span.small-value {{ lastDifficulty | number }}
+          sparkchart.big-details.spark-difficulty(data="{{difficultyChart.join(',')}}")
 
-          div.col-xs-6.col-sm-4.col-md-3.stat-holder.xpull-right
-            div.big-info.chart.xdouble-chart(class="{{ blockPropagationAvg | propagationAvgTimeClass : true }}")
-              //- i.icon-gas
-              span.small-title block propagation
-              //- span.small-value {{ blockPropagationAvg | blockPropagationFilter : '' }}
-              histogram.big-details.d3-blockpropagation(data="blockPropagationChart")
+      div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph.xpull-right
+        div.big-info.chart.xdouble-chart(class="{{ blockPropagationAvg | propagationAvgTimeClass : true }}")
+          //- i.icon-gas
+          span.small-title block propagation
+          //- span.small-value {{ blockPropagationAvg | blockPropagationFilter : '' }}
+          histogram.big-details.d3-blockpropagation(data="blockPropagationChart")
 
-          div.col-xs-6.col-sm-4.col-md-3.stat-holder.xpull-right
-            div.big-info.chart.xdouble-chart
-              span.small-title last blocks miners
-              div.blocks-holder(ng-repeat='miner in miners track by miner.miner', data-toggle="tooltip", data-placement="right", data-original-title="{{miner.blocks}}")
-                //- div.small-title-miner {{miner.miner | minerNameFilter : miner.name}}
-                div.small-title-miner {{miner.miner}}
-                div.block-count(class="{{miner.blocks | minerBlocksClass : 'text-'}}") {{miner.blocks}}
-                minerblock(blocks="{{miner.blocks}}")
-                div.clearfix
+      div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph.xpull-right
+        div.big-info.chart.xdouble-chart
+          span.small-title last blocks miners
+          div.blocks-holder(ng-repeat='miner in miners track by miner.miner', data-toggle="tooltip", data-placement="right", data-original-title="{{miner.blocks}}")
+            //- div.small-title-miner {{miner.miner | minerNameFilter : miner.name}}
+            div.small-title-miner {{miner.miner}}
+            div.block-count(class="{{miner.blocks | minerBlocksClass : 'text-'}}") {{miner.blocks}}
+            minerblock(blocks="{{miner.blocks}}")
+            div.clearfix
 
-          div.col-xs-6.col-sm-4.col-md-3.stat-holder
-            div.big-info.chart.text-info
-              //- i.icon-uncle
-              span.small-title uncle count&nbsp;
-                span.small.hidden-xs (25 blocks per bar)
-              //- span.small-value {{ bestStats.block.uncles.length }}/{{ uncleCount }}
-              sparkchart.big-details.spark-uncles(data="{{uncleCountChart.join(',')}}")
+      div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph
+        div.big-info.chart.text-info
+          //- i.icon-uncle
+          span.small-title uncle count&nbsp;
+            span.small.hidden-xs (25 blocks per bar)
+          //- span.small-value {{ bestStats.block.uncles.length }}/{{ uncleCount }}
+          sparkchart.big-details.spark-uncles(data="{{uncleCountChart.join(',')}}")
 
-          div.col-xs-6.col-sm-4.col-md-3.stat-holder
-            div.big-info.chart.text-info
-              //- i.icon-uncle
-              span.small-title transactions
-              sparkchart.big-details.spark-transactions(data="{{transactionDensity.join(',')}}")
+      div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph
+        div.big-info.chart.text-info
+          //- i.icon-uncle
+          span.small-title transactions
+          sparkchart.big-details.spark-transactions(data="{{transactionDensity.join(',')}}")
 
-          div.col-xs-6.col-sm-4.col-md-3.stat-holder
-            div.big-info.chart.text-info
-              //- i.icon-gasprice
-              span.small-title gas spending
-              sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
+      div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph
+        div.big-info.chart.text-info
+          //- i.icon-gasprice
+          span.small-title gas spending
+          sparkchart.big-details.spark-gasspending(data="{{gasSpending.join(',')}}")
 
-          div.col-xs-6.col-sm-4.col-md-3.stat-holder
-            div.big-info.chart.text-info
-              //- i.icon-difficulty
-              span.small-title gas limit
-              //- span.small-value {{ lastDifficulty | number }}
-              sparkchart.big-details.spark-difficulty(data="{{lastGasLimit.join(',')}}")
+      div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph
+        div.big-info.chart.text-info
+          //- i.icon-difficulty
+          span.small-title gas limit
+          //- span.small-value {{ lastDifficulty | number }}
+          sparkchart.big-details.spark-difficulty(data="{{lastGasLimit.join(',')}}")
 
-
-
-      div.col-xs-12.col-sm-12.col-md-12.col-lg-4.stat-holder.map-holder
+      div.col-xs-12.col-sm-12.col-md-12.col-lg-4.map-holder
         //- div.col-xs-12
         nodemap#mapHolder(data="map")
 
