@@ -31,67 +31,39 @@ block content
           li
             a.Header-menu-content-target(href='/blog/') Blog
   div.container-grid(ng-controller='StatsCtrl')
-      // div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
-      //   div.big-info.bestblock.text-info
-      //     div.pull-left.icon-full-width
-      //       i.icon-block
-      //     div.big-details-holder
-      //       span.small-title best block
-      //       span.big-details.text-success {{'#'}}{{ bestBlock | number}}
-      //     div.clearfix
       div.stat-holder
         span.small-title best block
         div.stat-row.bestblock
           i.icon-block
           span.text-success {{'#'}}{{ bestBlock | number}}
-      div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
-        div.big-info.uncleCount.text-info
-          div.pull-left.icon-full-width
-            i.icon-uncle
-          div.big-details-holder
-            span.small-title uncles&nbsp;
-              span.small.hidden-xs (current / last 50)
-            span.big-details {{ bestStats.block.uncles.length }}/{{ uncleCount }}
-          div.clearfix
-      div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
-        div.big-info.blocktime(class="{{ lastBlock | timeClass : true }}")
-          div.pull-left.icon-full-width
-            i.icon-time
-          div.big-details-holder
-            span.small-title last block
-            span.big-details {{ lastBlock | blockTimeFilter }}
-            //- span.big-details(time-ago="lastBlock")
-          div.clearfix
-      div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
-        div.big-info.avgblocktime(class="{{ avgBlockTime | avgTimeClass }}")
-          div.pull-left.icon-full-width
-            i.icon-gas
-          div.big-details-holder
-            span.small-title avg block time
-            span.big-details {{ avgBlockTime | avgTimeFilter }}
-          div.clearfix
-      div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
-        div.big-info.difficulty.text-orange
-          div.pull-left.icon-full-width
-            i.icon-hashrate
-          div.big-details-holder
-            span.small-title
-              span.hidden-xs avg&nbsp;
-              | network hash
-              span.hidden-xs rate
-            span.big-details(ng-bind-html="avgHashrate | networkHashrateFilter")
-          div.clearfix
-      div.col-xs-6.col-sm-6.col-md-6.col-lg-2.stat-holder
-        div.big-info.difficulty.text-danger
-          div.pull-left.icon-full-width
-            i.icon-difficulty
-          div.big-details-holder
-            span.small-title difficulty
-            span.big-details
-              span.small-hash {{ lastDifficulty | totalDifficultyFilter }}
-          div.clearfix
+      div.stat-holder
+        span.small-title uncles&nbsp;
+        span.small-title (current / last 50)
+        div.stat-row.uncleCount
+          i.icon-uncle
+          span.text-success {{ bestStats.block.uncles.length }}/{{ uncleCount }}
+      div.stat-holder
+        span.small-title last block
+        div.stat-row.blocktime(class="{{ lastBlock | timeClass : true }}")
+          i.icon-time
+          span.text-orange {{ lastBlock | blockTimeFilter }}
+      div.stat-holder
+        span.small-title avg block time
+        div.stat-row.avgblocktime(class="{{ avgBlockTime | avgTimeClass }}")
+          i.icon-gas
+          span.text-success {{ avgBlockTime | avgTimeFilter }}
+      div.stat-holder
+        span.small-title avg&nbsp network hash rate
+        div.stat-row.difficulty
+          i.icon-hashrate
+          span.text-orange(ng-bind-html="avgHashrate | networkHashrateFilter")
+      div.stat-holder
+        span.small-title difficulty
+        div.stat-row.difficulty
+          i.icon-difficulty
+          span.text-danger {{ lastDifficulty | totalDifficultyFilter }}
 
-  div.container-grid(ng-controller='StatsCtrl')
+  div.container-grid(ng-cloak, ng-controller='StatsCtrl')
       div.stat-holder-small
         div.active-nodes(class="{{ nodesActive | nodesActiveClass : nodesTotal }}")
           i.icon-node
@@ -118,7 +90,7 @@ block content
           span.small-title uptime
           span.small-value {{ upTimeTotal | upTimeFilter }}
 
-  div.container-grid.dense-grid(ng-controller='StatsCtrl')
+  div.container-grid.dense-grid(ng-cloak, ng-controller='StatsCtrl')
       div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph
         div.big-info.chart(class="{{ avgBlockTime | avgTimeClass }}")
           //- i.icon-time

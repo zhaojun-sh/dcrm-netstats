@@ -49,7 +49,8 @@ table td {
 
 .bg-orange,
 .text-orange .propagationBox {
-	background: #ff8a00;
+	background: #ff876C;
+  color: #ff876C;
 }
 
 .bg-danger,
@@ -75,7 +76,7 @@ table td {
 }
 
 .text-orange {
-	color: #ff8a00;
+	color: #ff876C;
 }
 
 .container-grid {
@@ -101,7 +102,7 @@ table td {
   width: 100%;
   height: 95px;
   border-radius: 4px;
-  padding: 16px;
+  padding: 15px;
 }
 
 .stat-row {
