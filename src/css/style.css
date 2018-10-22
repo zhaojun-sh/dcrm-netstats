@@ -4,6 +4,10 @@ html {
 	width: 100%;
 }
 
+h4, h5 {
+  font-weight: 700;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	width: 100%;
@@ -79,6 +83,34 @@ table td {
 	color: #ff876C;
 }
 
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #34C88A;
+  padding: 0 30px;
+  min-height: 40px;
+  margin: 8px auto;
+  width: 95%;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.banner > h5 {
+  margin-left: auto;
+  min-width: 225px;
+  max-width: 880px;
+}
+
+.banner > h4 {
+  margin-right: 30px;
+}
+
 .container-grid {
   display: -ms-grid;
   display: grid;
@@ -106,8 +138,11 @@ table td {
 }
 
 .stat-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   font-size: 32px;
   margin-top: 2px;
 }
@@ -119,12 +154,20 @@ table td {
 }
 
 .stat-holder-small {
-  padding: 10px 15px 0px 15px;
+  padding: 8px;
   background: #ffffff;
   border: 1px solid rgba(255,255,255,0.05);
   width: 100%;
   height: 40px;
   border-radius: 4px
+}
+
+.stat-holder-small > div > i {
+  margin-right: 10px;
+}
+
+.stat-holder-small > {
+  display: grid;
 }
 
 .stat-holder-graph {
@@ -216,6 +259,11 @@ span.small-title span.small {
 	display: table;
 	top: 40px;
 	margin: 0 auto;
+  width: 96%;
+}
+
+.big-info.chart .big-details > canvas {
+  width: 100% !important;
 }
 
 .big-info.chart {
@@ -300,7 +348,7 @@ span.small-title span.small {
 }
 
 .small-value {
-	font-weight: 300;
+	font-weight: normal;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-moz-osx-font-smoothing: auto;
 	float: right;
@@ -404,11 +452,11 @@ nodepropagchart {
 
 
 #mapHolder {
-	position: relative;
 	display: block;
 	width: 100%;
-	height: 242px;
+  height: 100%;
 	overflow: hidden;
+  fill: #E5E5E5;
 }
 
 #mapHolder > svg {
@@ -418,8 +466,13 @@ nodepropagchart {
 	height: 100%;
 	display: inline-block;
 	position: absolute;
+  margin-top: 22px;
 	top: 0;
 	left: 0;
+}
+
+.datamap path {
+  fill: #E5E5E5 !important;
 }
 
 .jqsfield {
@@ -1058,4 +1111,10 @@ svg .y.axis .tick:first-child text {
     grid-row: span 2;
   }
 
+}
+
+@media only screen and (max-width: 1132px) {
+  .banner > h5 {
+    margin-left: 0;
+  }
 }
