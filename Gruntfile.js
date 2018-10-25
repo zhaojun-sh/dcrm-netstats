@@ -28,9 +28,9 @@ var vendor = [
 
 var styles = [
 	'bootstrap.min.css',
-	'minimal-icons-embedded.css',
+  'custom-font.css',
 	'toastr.min.css',
-	'style.css'
+  'style.css',
 ];
 
 var src_lite = 'src-lite/';
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						cwd: 'src/fonts/',
-						src: ['minimal-*.*'],
+						src: ['callisto-*.*', 'minimal-*.*'],
 						dest: 'dist/fonts/',
 						filter: 'isFile'
 					},

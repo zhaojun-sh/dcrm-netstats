@@ -41,6 +41,10 @@ table td {
   color: #34C88A;
 }
 
+.text-success > span {
+  color: #34C88A;
+}
+
 .bg-info,
 .text-info .propagationBox {
 	background: #10a0de;
@@ -83,6 +87,10 @@ table td {
 	color: #ff876C;
 }
 
+.main-container {
+  margin: 0 8px;
+}
+
 .banner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,7 +104,7 @@ table td {
   padding: 0 30px;
   min-height: 40px;
   margin: 8px auto;
-  width: 95%;
+  width: 100%;
   border-radius: 4px;
   font-weight: 700;
 }
@@ -148,7 +156,7 @@ table td {
 }
 
 .stat-row > i {
-  margin-top: 4px;
+  margin-top: 8px;
   margin-right: 15px;
   color: #868D95;
 }
@@ -354,6 +362,10 @@ span.small-title span.small {
 	float: right;
 }
 
+.row {
+  margin: 0 15px;
+}
+
 .second-row .box .small-value {
 	float: right;
 }
@@ -400,9 +412,31 @@ nodepropagchart {
 	vertical-align: top;
 }
 
+.table {
+  margin-bottom: 0px;
+}
+
 .table>tbody>tr>td,
 .table>thead>tr>th {
 	padding: 5px;
+  border-bottom: none;
+  border-top: none;
+}
+
+.table>tbody>tr {
+  background-color: white;
+  border-bottom: 0.5px solid #e5e5e5;
+  border-radius: 4px !important;
+  color: #163F59;
+}
+
+.table>thead>tr>th>i {
+  color: #34C88A;
+}
+
+.table-container {
+  overflow-x: scroll;
+  margin-bottom: 25px;
 }
 
 .th-nodecheck,
