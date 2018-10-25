@@ -4,10 +4,14 @@ html {
 	width: 100%;
 }
 
+h4, h5 {
+  font-weight: 700;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 	width: 100%;
-	background: #ffffff;
+	background: #e5e5e5;
 	font-smooth: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -34,6 +38,11 @@ table td {
 .bg-success,
 .text-success .propagationBox {
 	background: #34c88a;
+  color: #34C88A;
+}
+
+.text-success > span {
+  color: #34C88A;
 }
 
 .bg-info,
@@ -48,7 +57,8 @@ table td {
 
 .bg-orange,
 .text-orange .propagationBox {
-	background: #ff8a00;
+	background: #ff876C;
+  color: #ff876C;
 }
 
 .bg-danger,
@@ -74,17 +84,120 @@ table td {
 }
 
 .text-orange {
-	color: #ff8a00;
+	color: #ff876C;
 }
 
-.container-fluid {
-	padding-left: 30px;
-	padding-right: 30px;
+.main-container {
+  margin: 0 8px;
+}
+
+.banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #34C88A;
+  padding: 0 30px;
+  min-height: 40px;
+  margin: 8px auto;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.banner > h5 {
+  margin-left: auto;
+  min-width: 225px;
+  max-width: 880px;
+}
+
+.banner > h4 {
+  margin-right: 30px;
+}
+
+.container-grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 312px);
+  grid-auto-flow: dense;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+  grid-gap: 8px 8px;
+  padding: 0 8px;
+  margin-top: 8px;
+}
+
+.dense-grid {
+  grid-auto-rows: 130px;
 }
 
 .stat-holder {
 	background: #ffffff;
 	border: 1px solid rgba(255,255,255,0.05);
+  width: 100%;
+  height: 95px;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.stat-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-size: 32px;
+  margin-top: 2px;
+}
+
+.stat-row > i {
+  margin-top: 8px;
+  margin-right: 15px;
+  color: #868D95;
+}
+
+.stat-holder-small {
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.05);
+  width: 100%;
+  height: 40px;
+  border-radius: 4px
+}
+
+.stat-holder-small > div > i {
+  margin-right: 10px;
+}
+
+.stat-holder-small > {
+  display: grid;
+}
+
+.stat-holder-graph {
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.05);
+  width: 100%;
+  height: 130px;
+  border-radius: 4px;
+}
+
+.map-holder {
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.05);
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / span 2;
+  grid-column-end: -1;
 }
 
 .big-info {
@@ -114,7 +227,7 @@ div.small-title-miner {
 	line-height: 10px;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
-	color: #aaa;
+	color: #163F59;
 }
 
 span.small-title span.small {
@@ -154,6 +267,11 @@ span.small-title span.small {
 	display: table;
 	top: 40px;
 	margin: 0 auto;
+  width: 96%;
+}
+
+.big-info.chart .big-details > canvas {
+  width: 100% !important;
 }
 
 .big-info.chart {
@@ -238,10 +356,14 @@ span.small-title span.small {
 }
 
 .small-value {
-	font-weight: 300;
+	font-weight: normal;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-moz-osx-font-smoothing: auto;
 	float: right;
+}
+
+.row {
+  margin: 0 15px;
 }
 
 .second-row .box .small-value {
@@ -290,9 +412,31 @@ nodepropagchart {
 	vertical-align: top;
 }
 
+.table {
+  margin-bottom: 0px;
+}
+
 .table>tbody>tr>td,
 .table>thead>tr>th {
 	padding: 5px;
+  border-bottom: none;
+  border-top: none;
+}
+
+.table>tbody>tr {
+  background-color: white;
+  border-bottom: 0.5px solid #e5e5e5;
+  border-radius: 4px !important;
+  color: #163F59;
+}
+
+.table>thead>tr>th>i {
+  color: #34C88A;
+}
+
+.table-container {
+  overflow-x: scroll;
+  margin-bottom: 25px;
 }
 
 .th-nodecheck,
@@ -340,16 +484,13 @@ nodepropagchart {
 	font-size: 12px;
 }
 
-.map-holder {
-	padding: 0;
-}
 
 #mapHolder {
-	position: relative;
 	display: block;
 	width: 100%;
-	height: 242px;
+  height: 100%;
 	overflow: hidden;
+  fill: #E5E5E5;
 }
 
 #mapHolder > svg {
@@ -359,8 +500,13 @@ nodepropagchart {
 	height: 100%;
 	display: inline-block;
 	position: absolute;
+  margin-top: 22px;
 	top: 0;
 	left: 0;
+}
+
+.datamap path {
+  fill: #E5E5E5 !important;
 }
 
 .jqsfield {
@@ -474,9 +620,9 @@ svg .y.axis .tick:first-child text {
 }
 
 @media (max-width: 768px) {
-	.container-fluid {
-		padding-left: 5px;
-		padding-right: 5px;
+	.container-grid {
+		padding-left: 12px;
+		padding-right: 12px;
 	}
 
 	.big-info .icon-full-width i {
@@ -554,7 +700,7 @@ svg .y.axis .tick:first-child text {
 }
 
 .Header {
-  background: #fff;
+  background: #e5e5e5;
   padding: 0.5em 1em;
 	margin-bottom: 2em;
   width: 100%;
@@ -674,7 +820,7 @@ svg .y.axis .tick:first-child text {
 }
 .Header-menu-mobile-content-middle .Header-menu-content-target {
   width: 100%;
-  padding: 0.5em;
+  padding: 1.8em 0.8em;
   display: block;
   font-size: 18px;
   line-height: 1.05;
@@ -957,6 +1103,7 @@ svg .y.axis .tick:first-child text {
   padding: 1em 5px;
   font-size: 14px;
 }
+
 @media only screen and (min-width: 992px) {
   .Footer-bottom-content-element {
     padding: 1em 13px;
@@ -986,4 +1133,22 @@ svg .y.axis .tick:first-child text {
 }
 .Footer-bottom-content-copy:hover {
   cursor: default;
+}
+
+@media only screen and (max-width: 654px) {
+
+  .map-holder {
+    -ms-grid-column-span: 1;
+    grid-column: span 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: span 2;
+  }
+
+}
+
+@media only screen and (max-width: 1132px) {
+  .banner > h5 {
+    margin-left: 0;
+  }
 }

@@ -61,6 +61,10 @@ grunt all
 ```bash
 npm start
 ```
+If you want some sweet auto build and livereload run
+```bash
+grunt watch
+```
 
 ## Run in PM2 - daemon mode.
 
