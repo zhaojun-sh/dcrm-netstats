@@ -30,7 +30,7 @@ block content
             a.Header-menu-content-target(href='https://callisto.network/#team') Team
           li
             a.Header-menu-content-target(href='/blog/') Blog
-  div.main-container(ng-controller='StatsCtrl')
+  div.main-container
     div.container-grid(ng-controller='StatsCtrl')
         div.stat-holder
           span.small-title best block
@@ -183,7 +183,7 @@ block content
 
     //- div.clearfix
 
-  div.row.table-container(ng-cloak, style="padding-top: 10px")
+  div.row.table-container(ng-cloak, ng-controller='StatsCtrl', style="padding-top: 10px")
     table.table
       thead
         tr.text-info
