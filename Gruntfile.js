@@ -275,7 +275,7 @@ module.exports = function(grunt) {
 				dest: 'dist-lite/js/app.min.js',
 				src: ['<%= concat.scripts_lite.dest %>']
 			}
-		}
+    },
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-clean');
