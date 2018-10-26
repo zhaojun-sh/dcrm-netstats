@@ -30,7 +30,7 @@ block content
             a.Header-menu-content-target(href='https://callisto.network/#team') Team
           li
             a.Header-menu-content-target(href='/blog/') Blog
-  div.main-container
+  div.main-container(ng-controller='StatsCtrl')
     div.container-grid(ng-controller='StatsCtrl')
         div.stat-holder
           span.small-title best block
@@ -163,7 +163,7 @@ block content
 
     div.banner
       h4 ATTENTION!
-      h5 This page does not represent the entire state of the ethereum network - listing a node on this page is a voluntary process.
+      h5 This page does not represent the entire state of the Callisto network - listing a node on this page is a voluntary process.
 
   div.row.hidden-xs
     div.col-xs-12.stats-boxes
@@ -172,7 +172,7 @@ block content
         //-  div.active-nodes.text-warning
         //-    i.icon-warning-o
         //-    span.small-title ATTENTION!
-        //-    span.small-value This page does not represent the entire state of the ethereum network - listing a node on this page is a voluntary process.
+        //-    span.small-value This page does not represent the entire state of the Callisto network - listing a node on this page is a voluntary process.
         //- div.col-xs-12.stat-holder.box
         //-   div.active-nodes.text-danger
         //-     i.icon-hashrate
