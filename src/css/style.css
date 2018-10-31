@@ -266,7 +266,7 @@ span.small-title span.small {
 .big-info.chart .big-details {
 	display: table;
 	top: 40px;
-	margin: 0 auto;
+	margin: 25px auto;
   width: 96%;
 }
 
@@ -289,7 +289,7 @@ span.small-title span.small {
 	padding-top: 6px;
 	margin-left: -2px;
 	display: table;
-	margin: 0 auto;
+	margin: 12px auto;
 }
 
 .blocks-holder {
