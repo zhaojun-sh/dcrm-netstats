@@ -2,34 +2,7 @@
 extends ./layout.jade
 
 block content
-  header.Header
-    .Header-content
-      a(href='/')
-        figure.Header-figure
-          img.Header-logo-desktop(src='https://callisto.network/image/callisto_logo_c.svg', alt='Callisto Logo')
-          img.Header-logo-mobile(src='https://callisto.network/image/mini-logo.svg', alt='Callisto Logo')
-      nav.Header-menu
-        a.Header-menu-mobile
-          i.fas.fa-bars.Header-menu-mobile-icon
-        ul.Header-menu-content
-          li
-            a.Header-menu-content-target(href='https://callisto.network/#roadmap') Roadmap
-          li
-            a.Header-menu-content-target(href='https://callisto.network/airdrop/') Airdrop
-          li
-            a.Header-menu-content-target(href='https://callisto.network/#wallets') Wallets
-          li
-            a.Header-menu-content-target(href='https://callisto.network/#exchanges') Exchanges
-          li
-            a.Header-menu-content-target(href='https://callisto.network/#mining') Mining
-          li
-            a.Header-menu-content-target(href='https://callisto.network/cold-staking/') Cold Staking
-          li
-            a.Header-menu-content-target(href='https://callisto.network/smart-contract-audit/') Audit
-          li
-            a.Header-menu-content-target(href='https://callisto.network/#team') Team
-          li
-            a.Header-menu-content-target(href='/blog/') Blog
+
   div.main-container(ng-controller='StatsCtrl')
     div.container-grid
         div.stat-holder
@@ -264,33 +237,4 @@ block content
             td(class="{{ node.stats | propagationNodeAvgTimeClass : bestBlock }}").hidden-xs {{ node.stats | blockPropagationAvgFilter : bestBlock }}
             td(class="{{ node.stats.uptime | upTimeClass : node.stats.active }}") {{ node.stats.uptime | upTimeFilter }}
 
-  footer.Footer
-    .Footer-top.container
-      figure.Footer-figure
-        img.Footer-logo(src='https://callisto.network/image/callisto_logo_c.svg', alt='Callisto Logo')
-      .Footer-top-list
-        span.Footer-top-list-title
-          span Callisto Network Ecosystem
-        a.Footer-top-list-element(href='https://callisto.network/#wallets') Wallets
-        a.Footer-top-list-element(href='https://callisto.network/#pool') Pools
-        a.Footer-top-list-element(href='https://callisto.network/#pool') Block Explorers
-        a.Footer-top-list-element(href='https://callisto.network/#exchanges') Exchanges
-        a.Footer-top-list-element(href='https://checker.callisto.network', target='_blank') Official Checker
-      .Footer-top-list
-        span.Footer-top-list-title
-          span Community and Help
-        a.Footer-top-list-element(href='https://callisto.network/community-guidlines/') Community Guidelines
-        a.Footer-top-list-element(href='https://callisto.network/blog/') Blog
-        a.Footer-top-list-element(href='https://callisto.network/faq/', target='_blank') Callisto FAQ
-      .Footer-top-list
-        span.Footer-top-list-title Callisto
-        a.Footer-top-list-element(href='https://callisto.network/#about') About
-        a.Footer-top-list-element(href='https://callisto.network/airdrop/') Airdrop
-        a.Footer-top-list-element(href='https://callisto.network/#team') Our Team
-        a.Footer-top-list-element(href='https://callisto.network/financial-report/') Financial report
-        a.Footer-top-list-element(href='https://affiliate.callisto.network/', target='_blank') Affiliate Program
-    .Footer-bottom
-      .Footer-bottom-content.container
-        .Footer-bottom-content-copy
-          span
-            span © 2017—2018 Callisto Network
+
