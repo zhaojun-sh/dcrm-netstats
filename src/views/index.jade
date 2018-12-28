@@ -29,11 +29,11 @@ block content
               span.path2
               span.path3
             span.text-success {{ avgBlockTime | avgTimeFilter }}
-        div.stat-holder
-          span.small-title avg&nbsp network hash rate
-          div.stat-row.difficulty
-            i.icon-custom-fire
-            span.text-orange(ng-bind-html="avgHashrate | networkHashrateFilter")
+        //div.stat-holder
+          //span.small-title avg&nbsp network hash rate
+          //div.stat-row.difficulty
+            //i.icon-custom-fire
+            //span.text-orange(ng-bind-html="avgHashrate | networkHashrateFilter")
         div.stat-holder
           span.small-title difficulty
           div.stat-row.difficulty
@@ -50,21 +50,21 @@ block content
               span.path4
             span.small-title active nodes
             span.small-value.text-success {{nodesActive}}/{{nodesTotal}}
-        div.stat-holder-small
-          div.gasprice.text-info
-            i.icon-custom-pricetag-green.text-success
-            span.small-title gas price
-            span.small-value {{ bestStats.gasPrice.toString() | gasPriceFilter }}
+        //div.stat-holder-small
+          //div.gasprice.text-info
+            //i.icon-custom-pricetag-green.text-success
+            //span.small-title gas price
+            //span.small-value {{ bestStats.gasPrice.toString() | gasPriceFilter }}
         div.stat-holder-small
           div.gasprice.text-info
             i.icon-custom-pricetag-green.text-success
             span.small-title gas limit
             span.small-value {{ bestStats.block.gasLimit }} gas
-        div.stat-holder-small
-          div.page-latency(class="{{ {active: true, latency: latency} | latencyClass }}")
-            i.icon-custom-fullclock-green.text-success
-            span.small-title page latency
-            span.small-value {{latency}} ms
+        //div.stat-holder-small
+          //div.page-latency(class="{{ {active: true, latency: latency} | latencyClass }}")
+            //i.icon-custom-fullclock-green.text-success
+            //span.small-title page latency
+            //span.small-value {{latency}} ms
         div.stat-holder-small
           div.uptime(class="{{ upTimeTotal | upTimeClass : true }}")
             i.icon-custom-buld-green.text-success
@@ -136,7 +136,7 @@ block content
 
     div.banner
       h4 ATTENTION!
-      h5 This page does not represent the entire state of the Callisto network - listing a node on this page is a voluntary process.
+      h5 This page does not represent the entire state of the Dcrm network - listing a node on this page is a voluntary process.
 
     div.row.hidden-xs
       div.col-xs-12.stats-boxes
@@ -145,7 +145,7 @@ block content
           //-  div.active-nodes.text-warning
           //-    i.icon-warning-o
           //-    span.small-title ATTENTION!
-          //-    span.small-value This page does not represent the entire state of the Callisto network - listing a node on this page is a voluntary process.
+          //-    span.small-value This page does not represent the entire state of the Dcrm network - listing a node on this page is a voluntary process.
           //- div.col-xs-12.stat-holder.box
           //-   div.active-nodes.text-danger
           //-     i.icon-hashrate
