@@ -29,17 +29,20 @@ block content
               span.path2
               span.path3
             span.text-success {{ avgBlockTime | avgTimeFilter }}
+        
         //div.stat-holder
+          //span.small-title difficulty
+          //div.stat-row.difficulty
+            //i.icon-custom-piece
+            //span.text-danger {{ lastDifficulty | totalDifficultyFilter }}
+        //div.stat-holder.opacity        
+        //div.stat-holder.opacity
+        div.nowStyle1
+        div.nowStyle2
           //span.small-title avg&nbsp network hash rate
           //div.stat-row.difficulty
             //i.icon-custom-fire
             //span.text-orange(ng-bind-html="avgHashrate | networkHashrateFilter")
-        div.stat-holder
-          span.small-title difficulty
-          div.stat-row.difficulty
-            i.icon-custom-piece
-            span.text-danger {{ lastDifficulty | totalDifficultyFilter }}
-
     div.container-grid(ng-cloak)
         div.stat-holder-small
           div.active-nodes(class="{{ nodesActive | nodesActiveClass : nodesTotal }}")
@@ -50,17 +53,18 @@ block content
               span.path4
             span.small-title active nodes
             span.small-value.text-success {{nodesActive}}/{{nodesTotal}}
-        //div.stat-holder-small
-          //div.gasprice.text-info
-            //i.icon-custom-pricetag-green.text-success
-            //span.small-title gas price
-            //span.small-value {{ bestStats.gasPrice.toString() | gasPriceFilter }}
+        //div.stat-holder-small.opacity
+        div.stat-holder-small
+          div.gasprice.text-info
+            i.icon-custom-pricetag-green.text-success
+            span.small-title gas price
+            span.small-value {{ bestStats.gasPrice.toString() | gasPriceFilter }}
         div.stat-holder-small
           div.gasprice.text-info
             i.icon-custom-pricetag-green.text-success
             span.small-title gas limit
             span.small-value {{ bestStats.block.gasLimit }} gas
-        //div.stat-holder-small
+        //div.stat-holder-small.opacity
           //div.page-latency(class="{{ {active: true, latency: latency} | latencyClass }}")
             //i.icon-custom-fullclock-green.text-success
             //span.small-title page latency
@@ -70,7 +74,18 @@ block content
             i.icon-custom-buld-green.text-success
             span.small-title uptime
             span.small-value.text-success {{ upTimeTotal | upTimeFilter }}
-
+        div.nowStyle3
+        div.nowStyle4
+        div.nowStyle5
+          //div.gasprice.text-info
+            //i.icon-custom-pricetag-green.text-success
+            //span.small-title gas price
+            //span.small-value {{ bestStats.gasPrice.toString() | gasPriceFilter }}
+        div.opacity
+          //div.gasprice.text-info
+            //i.icon-custom-pricetag-green.text-success
+            //span.small-title gas price
+            //span.small-value {{ bestStats.gasPrice.toString() | gasPriceFilter }}
     div.container-grid.dense-grid(ng-cloak)
         div.col-xs-6.col-sm-4.col-md-3.stat-holder-graph
           div.big-info.chart(class="{{ avgBlockTime | avgTimeClass }}")
